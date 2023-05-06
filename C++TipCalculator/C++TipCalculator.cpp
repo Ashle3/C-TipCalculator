@@ -2,19 +2,24 @@
 //
 
 #include <iostream>
+#include <iomanip> //lets me round to 2 decimal places
+using namespace std;
 
 int main()
 {
-    std::cout << "The final test...HOO HOO!\n";
+    double subtotal; //define input variable
+    cout << "Enter the subtotal: "; //input prompt
+    cin >> subtotal; //gets user input and stores it into subtotal variable
+    
+    double percent = 0.2; //holds the variable containing the 20% tip
+    cout << fixed << setprecision(2); //lets me round to 2 decimal places using iomanip library
+    double tip = subtotal * percent; //calculates the tip
+    cout << "Your recommended tip is $" << tip; //prints out the recommended tip
+    double newtotal = subtotal + tip; //adds the subtotal and tip together
+    cout << "\nYour total including tip is now $" << newtotal; //prints out the new total
+
+    return 0; //is used to exit function
 }
 
-// Run program: Ctrl + F5 or Debug > Start Without Debugging menu
-// Debug program: F5 or Debug > Start Debugging menu
 
-// Tips for Getting Started: 
-//   1. Use the Solution Explorer window to add/manage files
-//   2. Use the Team Explorer window to connect to source control
-//   3. Use the Output window to see build output and other messages
-//   4. Use the Error List window to view errors
-//   5. Go to Project > Add New Item to create new code files, or Project > Add Existing Item to add existing code files to the project
-//   6. In the future, to open this project again, go to File > Open > Project and select the .sln file
+
